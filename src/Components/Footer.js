@@ -67,7 +67,7 @@ export default function Footer() {
       <div className="f">
         <div className="grid grid-2 f1">
           <div className="grid-sec">
-            <p className="para">Copyright © 2024 Graviton by BravisThemes. All Rights Reserved.</p>
+            <p className="para">Copyright © 2025 Graviton by BravisThemes. All Rights Reserved.</p>
           </div>
           <div className="grid-sec gd-s">
             <p className="para">
