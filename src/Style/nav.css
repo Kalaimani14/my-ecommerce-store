@@ -1,0 +1,109 @@
+.nav h5 {
+  padding: 15px;
+}
+
+.nav img {
+  max-width: 70px;
+  height: auto;
+}
+
+.nav .atc {
+  position: relative;
+  background-color: rgb(0 0 0 / 41%);
+}
+
+.nav .add {
+  max-width: 25px;
+  width: 100%;
+  border-radius: 50px;
+  background-color: red;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 0;
+  color: white;
+}
+
+.grid,
+.gs-1 {
+  display: flex;
+  align-items: center;
+}
+
+.grid-sec.gs-1 {
+  max-width: 25%;
+  border-radius: 15px;
+}
+
+.grid-sec.gs-2 {
+  max-width: 70%;
+}
+
+.logo {
+  border-radius: 30px;
+}
+
+.nav label input {
+  min-width: 80%;
+  text-align: center;
+  padding: 15px;
+  border-radius: 30px;
+
+
+}
+
+.ip-label {
+  min-width: 30%;
+  position: relative;
+
+}
+
+.nav .search {
+  border-radius: 30px;
+  padding: 15px;
+  background-color: black;
+  color: white;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+
+.n-g {
+  background-color: rgb(0 0 0 / 41%);
+  ;
+}
+
+.grid .grid-sec {
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px;
+}
+
+.nav .grid-sec {
+  background-color: rgb(85 94 85);
+}
+
+.nav h5 {
+  cursor: pointer;
+  background-color: #596159;
+  color: white;
+  
+  border-radius: 30px;
+}
+
+.nav h5:hover {
+  color: blueviolet;
+  background-color: white;
+}
+
+.nav p {
+  cursor: pointer;
+  
+  border-radius: 15px;
+  
+}
+
+.nav .login {
+  
+  color: blue;
+  margin-left: 15px;
+}

@@ -1,0 +1,78 @@
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+
+.grid-4 .grid-sec {
+  width: 20%;
+  padding: 15px;
+  margin: 10px;
+  max-width: 100%;
+  border-radius: 25px;
+}
+
+.grid-sec img {
+  width: 250px;
+  height: 250px;
+  border-radius: 25px;
+}
+
+.gs-price {
+  justify-content: space-evenly;
+  /* box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px; */
+
+  font-weight: 400;
+}
+
+p {
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset; */
+
+  padding: 15px;
+}
+
+.inc,.dnc {
+  border-radius: 50px;
+  background-color: rgba(136, 137, 139, 0.8);
+  color: black;
+
+}
+
+
+.grid-sec {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  background-color: white;
+}
+
+.grid button {
+  padding: 15px;
+}
+
+
+
+.grid .gs-s1 {
+  width: 20%;
+}
+
+.grid .gs-s2 {
+  width: 80%;
+}
+
+.in-de {
+  margin-bottom: 5px;
+  padding: none;
+}
+
+.atc {
+  background-color: #00687B;;
+  color: white;
+  border: none;
+
+}
+
+.bn {
+  background-color: orangered;
+  color: white;
+  border: none;
+}

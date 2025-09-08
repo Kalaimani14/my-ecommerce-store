@@ -1,0 +1,52 @@
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background: #f9f9f9;
+  min-height: 80vh;
+}
+
+.about-content {
+  max-width: 800px;
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
+}
+
+.about-content h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.about-content .highlight {
+  color: #e63946;
+  font-weight: bold;
+}
+
+.about-team h2 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.about-team ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-team ul li {
+  font-size: 1rem;
+  padding: 6px 0;
+  color: #333;
+}
