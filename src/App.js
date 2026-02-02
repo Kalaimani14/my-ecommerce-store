@@ -1,59 +1,58 @@
-import { Routes, Route } from "react-router-dom";
-import { useState } from 'react';
-import './App.css';
-import DisplayData from './Components/DisplayData';
-import Nav from './Components/Nav';
-import Help from "./Components/Help";
-import Contact from "./Components/Contact";
-import About from "./Components/About";
-import Service from "./Components/Service";
-import Login from "./Components/Login";
-import Signup from "./Components/Signup";
+import Nav from "./Components/Nav";
+import NavBottom from "./Components/NavButtom";
+import "./App.css"
+import RunningOffer from "./Components/RunningOffer";
+import CategoryPage from "./Components/CategoryPage";
+import ProductsPage from "./Components/ProductsPage";
+import Footer from "./Components/Footer";
+import BrandCarousel from "./Components/BrandCarousel";
+import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import About from "./Components/About.js"
+import Login from "./Components/Login.js"
+import Help from "./Components/Help.js"
+import Contact from "./Components/Contact.js"
+
 
 
 function App() {
-  const [addedtocardcount, setaddedtocardcount] = useState(0)
-  const [popupstatus, setpopupstatus] = useState(0)
-  function headercount(count) {
-    setaddedtocardcount(count);
+  const [addedToCardCount, setAddedToCardCount] = useState(0);
+  const [popUpStatus, setPopUpStatus] = useState(0);
+  function headerCount(count) {
+    setAddedToCardCount(count)
   }
-  // function openpopup(){
-  //   setpopupstatus(1);
-  // }
+  function openPopup() {
+    setPopUpStatus(true);
+  }
+
+  function closePopup() {
+    setPopUpStatus(false);
+  }
   return (
-    <div className='container'>
-      <div className='max-w'>
-        <Nav
-          addedtocardcount={addedtocardcount}
-          openpopup={() => { setpopupstatus(1) }}  /*  openpopup={openpopup} */
-        />
-          {/* ✅ Routing setup */}
-        <Routes>
-          {/* <Route
-            path="/"
-            element={
-              <DisplayData
-                headercount={headercount}
-                popupstatus={popupstatus}
-                popupclose={() => setpopupstatus(0)}
-              />
-            }
-          /> */}
-          <Route path="/help" element={<Help/>} />
-          <Route path="/product" element={<Service/>} />
-          <Route path="/contact" element={<Contact></Contact>} />
-          <Route path="/about" element={<About></About>} />
-          <Route path="/login" element={<Login/>}/>
-          <Route path="/signup" element={<Signup/>}/>
-        </Routes>
-        <DisplayData
-          headercount={headercount}
-          popupstatus={popupstatus}
-          popupclose={() => setpopupstatus(0)}
-        />
-       
+    <div className="container">
+      <div  className="max-w">
+        
+      <Nav addedToCardCount={addedToCardCount}
+        openPopup={openPopup} />
+      <Routes>
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact/>} />
+        <Route path="/product" element={<ProductsPage />} />
+        <Route path="/help" element={<Help />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+      <NavBottom />
+      <RunningOffer />
+      <CategoryPage />
+      <ProductsPage headerCount={headerCount}
+        popupStatus={popUpStatus}
+        popupClose={closePopup}
+        popUpStatus={popUpStatus} />
+      <BrandCarousel />
+      <Footer />
       </div>
     </div>
-  );
+
+  )
 }
 export default App;

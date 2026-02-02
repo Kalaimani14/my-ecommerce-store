@@ -1,255 +1,73 @@
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-ul {
-    margin: 0;
-    padding: 0;
-    font-family: "Public Sans", sans-serif;
+.footer {
+  background: #0b132b;
+  color: white;
+  padding: 30px 20px 10px;
+  margin-top: 40px;
 }
 
-body {
-    font-family: "Poppins", sans-serif;
-
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
-.container {
-    margin: 0;
-    padding: 0;
+.footer-section h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #00aaff;
 }
 
-
-.max-w {
-    max-width: 1300;
-
-    margin: 0 auto;
+.footer-section p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #dfe6e9;
 }
 
-.grid {
-    display: flex;
+.footer-section ul {
+  list-style: none;
+  padding: 0;
 }
 
-.grid-2 .grid-sec {
-    width: 45%;
+.footer-section ul li {
+  font-size: 14px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  color: #dfe6e9;
 }
 
-
-ul {
-    list-style-type: none;
+.footer-section ul li:hover {
+  color: #00aaff;
 }
 
-li {
-    color: white;
+.social-icons {
+  display: flex;
+  gap: 10px;
+  font-size: 20px;
+  cursor: pointer;
 }
 
-a {
-    color: white;
+.social-icons span:hover {
+  transform: scale(1.1);
 }
 
-.heading {
-    font-size: 23px;
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  color: #b2bec3;
+  border-top: 1px solid #1c2541;
+  padding-top: 10px;
 }
 
-.main-heading,
-.f45 {
-    font-size: 45px;
-}
+/* Responsive */
+@media (max-width: 600px) {
+  .footer-container {
+    text-align: center;
+  }
 
-.sub-heading,
-.f25 {
-    font-size: 25px;
-}
-
-.f26 {
-    font-size: 26px;
-}
-
-a {
-    text-decoration: none;
-
-}
-
-span {
-    font-size: 17px;
-}
-
-.h23 {
-    font-size: 23px;
-}
-
-.title,
-.f60 {
-    font-size: 60px;
-}
-
-.h-ref,
-.f13 {
-    font-size: 13px;
-
-}
-
-
-.para,
-.f15 {
-    font-size: 15px;
-    font-weight: 400;
-    color: rgb(75, 83, 93);
-}
-
-.para1,
-.f17 {
-    font-size: 17px;
-}
-
-.f20 {
-    font-size: 20px;
-}
-
-.f35 {
-    font-size: 35px;
-}
-
-.f70 {
-    font-size: 70px;
-}
-
-
-.pg22 {
-    padding-right: 15px;
-    padding-left: 15px;
-
-    background-color: #121C27
-}
-
-.pg22 .max-w {
-    margin-right: 18px;
-    margin-left: 18px;
-}
-
-.pg22 .max-w .x {
-    padding: 126px 15px 80px 15px;
-    background-color: #121C27
-
-}
-
-.pg22 .grid-sec img {
-    max-height: 43px;
-    width: auto;
-}
-
-.pg22 .grid-sec .p11 {
-    margin: 42px 0px 40px 0px;
-    color: #C4C4C4;
-    font-size: 15px;
-    line-height: 25px;
-
-}
-
-.pg22 .grid-sec .f20 {
-    margin: 0px 0px 20px 0px;
-    color: #FFFFFF;
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 22.92px;
-
-
-}
-
-.pg22 .para {
-    color: #C4C4C4;
-    background-color: #121C27;
-    font-size: 15px;
-    line-height: 25px;
-    margin: 0;
-
-}
-
-.pg22 .p12 {
-    margin: 8px 0px 8px 0px;
-}
-
-.pg22 .sec2 {
-    border-style: solid;
-    border-width: 0px 0px 0px 1px;
-    border-color: #FFFFFF26;
-
-}
-
-.pg22 .grid-sec1 {
-    width: 50%;
-
-}
-
-.pg22 .grid-sec.sec2 {
-    padding: 126px 15px 15px 70px;
-}
-
-.pg22 .grid-sec.sec2 .grid-sec1 .para {
-    margin-top: 12px;
-}
-
-.pg22 .grid-sec.sec2 input {
-    margin: 70px 0px 8px 0px;
-    margin-bottom: 20px;
-    padding: 0 50px 0 30px;
-    font-size: 15px;
-    background: #353e47;
-    color: #fff;
-    height: 60px;
-    border-radius: 1e3px;
-    line-height: 25.9px;
-    border: none;
-    width: 100%;
-}
-
-.pg22 .x .grid1.g1 {
-    display: flex;
-    margin: 31px 0px 0px -7px;
-}
-
-.pg22 .grid1.gd-p {
-    display: flex;
-}
-
-.pg22 .gd-p img {
-    margin: 8px 20px 0px 0px;
-}
-
-.pg22 .gd-p .para {
-    max-width: 80%;
-    margin-top: 8px;
-    line-height: 25px;
-
-}
-
-
-.pg22 .sec1 .grid1 .parax {
-    font-size: 15px;
-    display: inline-block;
-    color: #505A66;
-    padding: 0 10px;
-}
-
-.pg22 .f1 {
-    color: #C4C4C4;
-    font-size: 15px;
-    line-height: 25px;
-    padding: 15px;
-
-
-}
-
-.pg22 .f {
-    margin-left: 18px;
-    padding: 12px 0;
-    border-style: solid;
-    border-width: 1px 0px 0px 0px;
-    border-color: #FFFFFF26;
-}
-
-.pg22 .f .gd-s {
-    text-align: end;
+  .social-icons {
+    justify-content: center;
+  }
 }

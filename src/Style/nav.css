@@ -1,109 +1,149 @@
-.nav h5 {
-  padding: 15px;
-}
-
-.nav img {
-  max-width: 70px;
-  height: auto;
-}
-
-.nav .atc {
-  position: relative;
-  background-color: rgb(0 0 0 / 41%);
-}
-
-.nav .add {
-  max-width: 25px;
+/* ===== NAVBAR ===== */
+.nav {
   width: 100%;
-  border-radius: 50px;
-  background-color: red;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 0;
-  color: white;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.grid,
-.gs-1 {
+/* Center container */
+.max-w {
+  max-width: 1300px;
+  margin: auto;
+  padding: 10px 20px;
+}
+
+/* Navbar layout */
+.nav-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
-.grid-sec.gs-1 {
-  max-width: 25%;
-  border-radius: 15px;
+/* ===== LOGO ===== */
+.logo img {
+  height: 42px;
 }
 
-.grid-sec.gs-2 {
-  max-width: 70%;
+/* ===== SEARCH BAR ===== */
+.search-box input {
+  width: 320px;
+  padding: 8px 14px;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
-.logo {
-  border-radius: 30px;
+/* ===== RIGHT SIDE NAV ===== */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-.nav label input {
-  min-width: 80%;
-  text-align: center;
-  padding: 15px;
-  border-radius: 30px;
-
-
+/* ===== NAV LINKS ===== */
+.nav-links {
+  display: flex;
+  gap: 22px;
 }
 
-.ip-label {
-  min-width: 30%;
+.nav-links a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #007bff;
+}
+
+/* ===== LOGIN ===== */
+.auth-links a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #007bff;
+}
+
+/* ===== CART ICON ===== */
+.atc {
   position: relative;
-
+  cursor: pointer;
 }
 
-.nav .search {
-  border-radius: 30px;
-  padding: 15px;
-  background-color: black;
-  color: white;
+.atc img {
+  width: 26px;
+}
+
+.add {
   position: absolute;
-  right: 0;
-  z-index: 1;
-}
-
-.n-g {
-  background-color: rgb(0 0 0 / 41%);
-  ;
-}
-
-.grid .grid-sec {
-  background-color: rgb(255, 255, 255);
-  border-radius: 30px;
-}
-
-.nav .grid-sec {
-  background-color: rgb(85 94 85);
-}
-
-.nav h5 {
-  cursor: pointer;
-  background-color: #596159;
+  top: -6px;
+  right: -8px;
+  background: red;
   color: white;
-  
-  border-radius: 30px;
+  font-size: 12px;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.nav h5:hover {
-  color: blueviolet;
-  background-color: white;
-}
-
-.nav p {
+/* ===== HAMBURGER MENU ===== */
+.menu-icon {
+  font-size: 24px;
   cursor: pointer;
-  
-  border-radius: 15px;
-  
+  display: none;
 }
 
-.nav .login {
-  
-  color: blue;
-  margin-left: 15px;
+/* ===== MOBILE MENU ===== */
+.mobile-menu {
+  display: none;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media (max-width: 900px) {
+
+  .search-box input {
+    width: 200px;
+  }
+
+  .nav-links,
+  .auth-links {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 10px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .mobile-menu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 8px 0;
+  }
+
+  .mobile-menu a:hover {
+    color: #007bff;
+  }
 }

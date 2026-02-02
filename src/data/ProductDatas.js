@@ -15,118 +15,129 @@ const ProductDatas = [
     {
         imgurl: avocado,
         heading: 'Avacado',
-        price: 15,
+        oldPrice: 20,
+        offerPrice: 15,
         quantity: 1,
-        orderedq:0,
-        addtocard:0
+        orderedq: 0,
+        addtocard: 0
 
     },
     {
         imgurl: banana,
         heading: 'Banana',
-        price: 15,
+        oldPrice: 20,
+        offerPrice: 15,
         quantity: 1,
-        orderedq:0,
-        addtocard:0
+        orderedq: 0,
+        addtocard: 0
 
     },
     {
         imgurl: dragonfruit,
         heading: 'Dragonfruit',
-        price: 15,
+        oldPrice: 20,
+        offerPrice: 15,
         quantity: 1,
-        orderedq:0,
-        addtocard:0
+        orderedq: 0,
+        addtocard: 0
 
 
     },
     {
         imgurl: grapes,
         heading: 'grapes',
-        price: 15,
+        oldPrice: 20,
+         offerPrice: 15,
         quantity: 1,
-        orderedq:0,
-        addtocard:0
+        orderedq: 0,
+        addtocard: 0
 
 
     },
     {
         imgurl: kiwi,
         heading: 'Kiwi',
-        price: 15,
+        oldPrice: 20, 
+        offerPrice: 15,
         quantity: 1,
-        orderedq:0,
-        addtocard:0
+        orderedq: 0,
+        addtocard: 0
 
 
     },
     {
         imgurl: litchi,
         heading: 'Litchi',
-        price: 15,
+        oldPrice: 20, offerPrice: 15,
         quantity: 1,
-        orderedq:0,
-        addtocard:0
+        orderedq: 0,
+        addtocard: 0
 
 
     },
     {
         imgurl: mango,
         heading: 'Mango',
-        price: 15,
+
+        oldPrice: 20, offerPrice: 15,
         quantity: 1,
-        orderedq:0,
-        addtocard:0
+        orderedq: 0,
+        addtocard: 0
 
 
     },
     {
         imgurl: orange,
         heading: 'Orange',
-        price: 15,
+
+        oldPrice: 20, offerPrice: 15,
         quantity: 1,
-        orderedq:0,
-        addtocard:0
+        orderedq: 0,
+        addtocard: 0
 
 
     },
     {
         imgurl: pineapple,
         heading: 'Pineapple',
-        price: 15,
+
+        oldPrice: 20, offerPrice: 15,
         quantity: 1,
-        orderedq:0,
-        addtocard:0
+        orderedq: 0,
+        addtocard: 0
 
 
     },
     {
         imgurl: pomegranats,
         heading: 'Pomegranats',
-        price: 15,
+        oldPrice: 20,
+        offerPrice: 15,
         quantity: 1,
-        orderedq:0,
-        addtocard:0
+        orderedq: 0,
+        addtocard: 0
 
 
     },
     {
         imgurl: watermelon,
         heading: 'Water-melon',
-        price: 15,
+        oldPrice: 20,
+        offerPrice: 15,
         quantity: 1,
-        orderedq:0,
-        addtocard:0
+        orderedq: 0,
+        addtocard: 0
 
 
     },
     {
         imgurl: watermelon1,
         heading: 'Water-melon',
-        price: 15,
+        oldPrice: 20,
+        offerPrice: 15,
         quantity: 1,
-        orderedq:0,
-        addtocard:0
+        orderedq: 0,
+        addtocard: 0
 
 
     },

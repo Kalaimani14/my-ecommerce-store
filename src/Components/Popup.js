@@ -1,70 +1,45 @@
+import React from "react";
+import "../Style/popup.css";
 
-import"../Style/popup.css"
-import "../Style/table.css"
-export default function Popup(props) {
+export default function Popup({
+  popupstatus,
+  popupclose,
+  selectitem,
+  popIncrement,
+  popDecrement,
+}) {
+  if (!popupstatus) return null;
 
-    // Calculate total before return
-    const totalAmount = props.selectitem.reduce(
-        (sum, val) => sum + val.price * val.orderedq,
-        0
-    );
-    if (props.popupstatus == 1) {
-        return (
-            <div className="popup">
-                <div className="popup-data">
-                    <button onClick={() => { props.popupclose() }} className="close">X</button>
-                    <table >
-                        <thead>
-                            <tr>
-                                <th>S.no</th>
-                                <th>Img</th>
-                                <th>Product</th>
-                                <th>Quantity</th>
-                                <th colspan="3">Prize</th>
+  return (
+    <div className="popup-overlay" onClick={popupclose}>
+      <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+        {/* Close button top-left */}
+        <button className="close-btn" onClick={popupclose}>
+          ✕
+        </button>
 
-                            </tr>
-                        </thead>
-                        {
-                            props.selectitem.map((val, index) => {
-                                return (
-                                    <tr key={index}>
+        <h2>Your Cart</h2>
 
-                                        <td className="ta">{index + 1}</td>
-                                        <td><img className="ppimg" src={val.imgurl}></img></td>
-                                        <td className="ta">{val.heading}</td>
-                                        <td className="ta">{val.orderedq * val.quantity}</td>
-                                        <td className="ta">{val.orderedq * val.price} rs</td>
-                                        <td className="ta" onClick={() => props.popIncrement(val)}><button>+</button></td>
-                                        <td className="ta" onClick={() => props.popDecrement(val)}><button>-</button></td>
-
-                                    </tr>
-                                )
-                            })
-                        }
-                         <tr>
-                            <td className="amt" colSpan="2">Total = </td> 
-                            <td className="amt" colspan="5">{totalAmount}rs</td>
-
-                        </tr>
-                        <tr>
-                            <td className="buy" colspan="7">
-                                <button >Buy Now</button>
-                            </td>
-                            
-                        </tr>
-
-                    </table>
-
-                   
-
-
-
-
+        {selectitem.length === 0 ? (
+          <p style={{ textAlign: "center", color: "#555" }}>Cart is empty!</p>
+        ) : (
+          selectitem.map((item, index) => (
+            <div className="popup-item" key={index}>
+              <img src={item.imgurl} alt={item.heading} />
+              <div className="item-info">
+                <h3>{item.heading}</h3>
+                <p>Price: ₹{item.offerPrice}</p>
+                <div className="quantity-box">
+                  <button onClick={() => popDecrement(item)}>-</button>
+                  <span>{item.orderedq}</span>
+                  <button onClick={() => popIncrement(item)}>+</button>
                 </div>
-
-
+                <p>Total: ₹{item.offerPrice * item.orderedq}</p>
+              </div>
             </div>
-        )
-    }
-
+          ))
+        )}
+      </div>
+    </div>
+  );
 }
