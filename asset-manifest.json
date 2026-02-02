@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/my-ecommerce-store/static/css/main.52d9f82c.css",
-    "main.js": "/my-ecommerce-store/static/js/main.c9e10712.js",
+    "main.css": "/my-ecommerce-store/static/css/main.8d807993.css",
+    "main.js": "/my-ecommerce-store/static/js/main.b7b279b9.js",
     "static/js/453.4910951e.chunk.js": "/my-ecommerce-store/static/js/453.4910951e.chunk.js",
     "static/media/kiwi-green.png": "/my-ecommerce-store/static/media/kiwi-green.b12462219b397f37063f.png",
     "static/media/watermelon-sm.png": "/my-ecommerce-store/static/media/watermelon-sm.579ed75686692ee957f5.png",
@@ -14,16 +14,15 @@
     "static/media/litchi.png": "/my-ecommerce-store/static/media/litchi.3ea3785353e1ac361d4d.png",
     "static/media/grapes-green.png": "/my-ecommerce-store/static/media/grapes-green.5bb807f8294bc667c721.png",
     "static/media/pineapple.png": "/my-ecommerce-store/static/media/pineapple.02285a4d639ce49c9eb4.png",
-    "static/media/logo-W.png": "/my-ecommerce-store/static/media/logo-W.8b60e975243991a2c692.png",
     "static/media/atc.png": "/my-ecommerce-store/static/media/atc.d894826ed1f7bfd73c74.png",
     "static/media/k-logo.avif": "/my-ecommerce-store/static/media/k-logo.8f13bcb9e5d99dae257a.avif",
     "index.html": "/my-ecommerce-store/index.html",
-    "main.52d9f82c.css.map": "/my-ecommerce-store/static/css/main.52d9f82c.css.map",
-    "main.c9e10712.js.map": "/my-ecommerce-store/static/js/main.c9e10712.js.map",
+    "main.8d807993.css.map": "/my-ecommerce-store/static/css/main.8d807993.css.map",
+    "main.b7b279b9.js.map": "/my-ecommerce-store/static/js/main.b7b279b9.js.map",
     "453.4910951e.chunk.js.map": "/my-ecommerce-store/static/js/453.4910951e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.52d9f82c.css",
-    "static/js/main.c9e10712.js"
+    "static/css/main.8d807993.css",
+    "static/js/main.b7b279b9.js"
   ]
 }
