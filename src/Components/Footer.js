@@ -28,7 +28,7 @@ export default function Footer() {
           <h3>Contact</h3>
           <p>📍 Chennai, India</p>
           <p>📞 +91 6380010292</p>
-          <p>📧 support@yourstore.com</p>
+          <p>📧 kalaimani.lakshmanan14@gmail.com</p>
         </div>
 
         <div className="footer-section">

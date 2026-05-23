@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useCart } from "../contexts/CartContext";
 import "../Style/nav.css";
 import k from "../k-logo.avif";
 import atc from "../atc.png";
@@ -8,6 +9,7 @@ export default function Nav(props) {
 
   const [search, setSearch] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
+  const { cartItems } = useCart();
 
   function handleSearch(e) {
     setSearch(e.target.value);
@@ -47,9 +49,11 @@ export default function Nav(props) {
               <Link to="/login">Log in</Link>
             </div>
 
-            <div className="atc" onClick={props.openPopup}>  {/* make sure openPopup matches */}
-              <img src={atc} alt="Cart" />
-              <span className="add">{props.addedToCardCount}</span>
+            <div className="atc">
+              <Link to="/cart">
+                <img src={atc} alt="Cart" />
+                <span className="add">{cartItems.length || props.addedToCardCount}</span>
+              </Link>
             </div>
 
             {/* Hamburger Menu Button */}

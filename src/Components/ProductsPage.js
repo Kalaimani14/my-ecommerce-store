@@ -1,58 +1,53 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { useCart } from "../contexts/CartContext";
 import "../Style/products.css";
-import ProductDatas from "../data/ProductDatas";
 import Popup from "./Popup";
 
 export default function ProductsPage(props) {
+  const [product, setProduct] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const [product, setProduct] = useState(ProductDatas);
-  const [selectitem, setSelectitem] = useState([]);
+  const { addToCart } = useCart();
 
-  // -------- Add to Cart ----------
+  useEffect(() => {
+    fetch("https://dummyjson.com/products?limit=100")
+      .then((res) => res.json())
+      .then((data) => {
+        const formattedProducts = data.products.map((item) => ({
+          id: item.id,
+          imgurl: item.thumbnail,
+          heading: item.title,
+          oldPrice: Math.round(item.price + item.price * 0.25),
+          offerPrice: Math.round(item.price),
+          quantity: 1,
+          orderedq: 1,
+          addtocard: 0,
+          rating: item.rating,
+          description: item.description,
+          category: item.category,
+        }));
+
+        setProduct(formattedProducts);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log("API Error:", err);
+        setProduct([]);
+        setLoading(false);
+      });
+  }, []);
+
   function addToCartHandler(card) {
+    addToCart(card);
 
-    const changedProduct = product.map((val) => {
-      if (card.heading === val.heading) {
-        return { 
-          ...val, 
-          addtocard: 1,
-          orderedq: val.orderedq ? val.orderedq : 1   // ensure quantity starts from 1
-        };
-      }
-      return val;
-    });
-
-    const selected = changedProduct.filter(
-      (val) => val.addtocard === 1 && val.orderedq > 0
-    );
-
-    setSelectitem(selected);
-    props.headerCount(selected.length);
-    setProduct(changedProduct);
+    if (props.headerCount) {
+      props.headerCount((c) => (c ? c + 1 : 1));
+    }
   }
 
-  // -------- Popup Increment ----------
-  function popIncrement(card) {
-    const updated = selectitem.map((val) => {
-      if (val.heading === card.heading) {
-        return { ...val, orderedq: val.orderedq + 1 };
-      }
-      return val;
-    });
-
-    setSelectitem(updated);
-  }
-
-  // -------- Popup Decrement ----------
-  function popDecrement(card) {
-    const updated = selectitem.map((val) => {
-      if (val.heading === card.heading && val.orderedq > 1) {
-        return { ...val, orderedq: val.orderedq - 1 };
-      }
-      return val;
-    });
-
-    setSelectitem(updated);
+  if (loading) {
+    return <h2 className="prod-title">Loading products...</h2>;
   }
 
   return (
@@ -60,9 +55,12 @@ export default function ProductsPage(props) {
       <h2 className="prod-title">Featured Products</h2>
 
       <div className="prod-container small">
-        {product.map((p) => (
+        {product.map((p, idx) => (
           <div className="prod-card small-card" key={p.id}>
-            <img src={p.imgurl} alt={p.name} />
+            {p.rating >= 4.5 ? <div className="product-badge">Top Rated</div> : <div className="product-badge">{p.category}</div>}
+            <Link to={`/product/${idx}`}>
+              <img src={p.imgurl} alt={p.heading} />
+            </Link>
 
             <div className="prod-info">
               <h3>{p.heading}</h3>
@@ -74,21 +72,19 @@ export default function ProductsPage(props) {
 
               <p className="rating">⭐ {p.rating}</p>
 
-              <button onClick={() => addToCartHandler(p)}>
-                Add to Cart
-              </button>
+              <div className="prod-actions">
+                <a href="#" onClick={(e)=>{e.preventDefault(); addToCartHandler(p)}}>Add to Cart</a>
+                <Link to={`/product/${idx}`}>View</Link>
+              </div>
             </div>
           </div>
         ))}
       </div>
 
-    <Popup
-  popupstatus={props.popupStatus}  // match the prop name
-  popupclose={props.popupClose}    // pass the close function
-  popIncrement={popIncrement}
-  popDecrement={popDecrement}
-  selectitem={selectitem}
-/>
+      <Popup
+        popupstatus={props.popupStatus}
+        popupclose={props.popupClose}
+      />
     </div>
   );
 }

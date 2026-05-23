@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter ,RouterProvider} from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { CartProvider } from './contexts/CartContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
-    <App />
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <CartProvider>
+      <App />
+    </CartProvider>
   </BrowserRouter>
 );
 

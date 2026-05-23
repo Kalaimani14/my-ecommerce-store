@@ -1,6 +1,9 @@
 import "../Style/offer.css";
+import { useState } from "react";
 
 export default function RunningOffer() {
+
+  const [copied, setCopied] = useState(null);
 
   const offers = [
     {
@@ -46,8 +49,12 @@ export default function RunningOffer() {
           <div className="offer-card" key={offer.id}>
             <h3>{offer.title}</h3>
             <p>{offer.desc}</p>
-            <span className="offer-code">{offer.code}</span>
-            <button>Apply Now</button>
+            <div className="offer-bottom">
+              <span className="offer-code">{offer.code}</span>
+              <button onClick={() => { navigator.clipboard && navigator.clipboard.writeText(offer.code); setCopied(offer.id); setTimeout(()=>setCopied(null),1500); }}>
+                {copied === offer.id ? "Copied!" : "Copy Code"}
+              </button>
+            </div>
           </div>
         ))}
       </div>

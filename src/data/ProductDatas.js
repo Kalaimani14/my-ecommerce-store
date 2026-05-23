@@ -1,147 +1,103 @@
-import avocado from '../img/avocado-impor.png'
-import banana from '../img/banana-robust.png'
-import dragonfruit from '../img/dragon-fruit.png'
-import grapes from '../img/grapes-green.png'
-import kiwi from '../img/kiwi-green.png'
-import litchi from '../img/litchi.png'
-import mango from '../img/mango.png'
-import orange from '../img/orange.png'
-import pineapple from '../img/pineapple.png'
-import pomegranats from '../img/pomegranate-s.png'
-import watermelon from '../img/watermelon-sm.png'
-import watermelon1 from '../img/watermelon-sm.png'
+import React, { useEffect, useState } from "react";
+import "../Style/products.css";
 
-const ProductDatas = [
-    {
-        imgurl: avocado,
-        heading: 'Avacado',
-        oldPrice: 20,
-        offerPrice: 15,
-        quantity: 1,
-        orderedq: 0,
-        addtocard: 0
+export default function ProductsPage() {
+  const [product, setProduct] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    },
-    {
-        imgurl: banana,
-        heading: 'Banana',
-        oldPrice: 20,
-        offerPrice: 15,
-        quantity: 1,
-        orderedq: 0,
-        addtocard: 0
+  useEffect(() => {
+    fetch("https://dummyjson.com/products?limit=100")
+      .then((res) => res.json())
+      .then((data) => {
+        const formattedProducts = data.products.map((item) => ({
+          id: item.id,
 
-    },
-    {
-        imgurl: dragonfruit,
-        heading: 'Dragonfruit',
-        oldPrice: 20,
-        offerPrice: 15,
-        quantity: 1,
-        orderedq: 0,
-        addtocard: 0
+          imgurl: item.thumbnail,
 
+          heading: item.title,
 
-    },
-    {
-        imgurl: grapes,
-        heading: 'grapes',
-        oldPrice: 20,
-         offerPrice: 15,
-        quantity: 1,
-        orderedq: 0,
-        addtocard: 0
+          oldPrice: Math.round(
+            item.price + item.price * 0.25
+          ),
 
+          offerPrice: Math.round(item.price),
 
-    },
-    {
-        imgurl: kiwi,
-        heading: 'Kiwi',
-        oldPrice: 20, 
-        offerPrice: 15,
-        quantity: 1,
-        orderedq: 0,
-        addtocard: 0
+          quantity: 1,
 
+          orderedq: 0,
 
-    },
-    {
-        imgurl: litchi,
-        heading: 'Litchi',
-        oldPrice: 20, offerPrice: 15,
-        quantity: 1,
-        orderedq: 0,
-        addtocard: 0
+          addtocard: 0,
 
+          rating: item.rating,
 
-    },
-    {
-        imgurl: mango,
-        heading: 'Mango',
+          description: item.description,
 
-        oldPrice: 20, offerPrice: 15,
-        quantity: 1,
-        orderedq: 0,
-        addtocard: 0
+          category: item.category
+        }));
 
+        setProduct(formattedProducts);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log("API Error:", err);
+        setLoading(false);
+      });
+  }, []);
 
-    },
-    {
-        imgurl: orange,
-        heading: 'Orange',
+  if (loading) {
+    return (
+      <h2 style={{ textAlign: "center" }}>
+        Loading products...
+      </h2>
+    );
+  }
 
-        oldPrice: 20, offerPrice: 15,
-        quantity: 1,
-        orderedq: 0,
-        addtocard: 0
+  return (
+    <div className="products-container">
 
+      <h1 className="page-title">
+        Product Store
+      </h1>
 
-    },
-    {
-        imgurl: pineapple,
-        heading: 'Pineapple',
+      <div className="product-grid">
+        {product.map((item) => (
+          <div
+            className="product-card"
+            key={item.id}
+          >
+            <img
+              src={item.imgurl}
+              alt={item.heading}
+              className="product-image"
+            />
 
-        oldPrice: 20, offerPrice: 15,
-        quantity: 1,
-        orderedq: 0,
-        addtocard: 0
+            <h3>{item.heading}</h3>
 
+            <p className="category">
+              {item.category}
+            </p>
 
-    },
-    {
-        imgurl: pomegranats,
-        heading: 'Pomegranats',
-        oldPrice: 20,
-        offerPrice: 15,
-        quantity: 1,
-        orderedq: 0,
-        addtocard: 0
+            <div className="price-box">
+              <span className="old-price">
+                ₹{item.oldPrice}
+              </span>
 
+              <span className="offer-price">
+                ₹{item.offerPrice}
+              </span>
+            </div>
 
-    },
-    {
-        imgurl: watermelon,
-        heading: 'Water-melon',
-        oldPrice: 20,
-        offerPrice: 15,
-        quantity: 1,
-        orderedq: 0,
-        addtocard: 0
+            <p className="rating">
+              ⭐ {item.rating}
+            </p>
 
+            <button className="cart-btn">
+              Add To Cart
+            </button>
 
-    },
-    {
-        imgurl: watermelon1,
-        heading: 'Water-melon',
-        oldPrice: 20,
-        offerPrice: 15,
-        quantity: 1,
-        orderedq: 0,
-        addtocard: 0
-
-
-    },
-
-]
-
-export default ProductDatas;
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}

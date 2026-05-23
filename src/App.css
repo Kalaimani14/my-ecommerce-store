@@ -3,11 +3,85 @@
   margin: 0 auto;
 }
 
-.container {
-  text-align: center;
-
+:root{
+  --bg:#f7fafc;
+  --card:#ffffff;
+  --muted:#64748b;
+  --brand:#2563eb;
+  --accent:#16a34a;
+  --radius:12px;
+  --shadow: 0 6px 20px rgba(2,6,23,0.08);
+  --max-width:1300px;
 }
 
+html,body,#root{
+  height:100%;
+}
+
+body{
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  margin:0;
+  background:var(--bg);
+  color: #0f172a;
+  -webkit-font-smoothing:antialiased;
+}
+
+.container {
+  text-align: left;
+  padding-bottom: 80px; /* space for footer/nav-bottom */
+}
+
+.app-root{
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+
+.main-content{
+  flex:1 0 auto;
+}
+
+.site-hero{
+  background: linear-gradient(90deg, rgba(37,99,235,0.08), rgba(22,163,74,0.03));
+  padding: 28px 0;
+  margin-bottom: 18px;
+}
+
+.hero-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.hero-copy h1{
+  margin:0 0 8px 0;
+  font-size:36px;
+  line-height:1.05;
+}
+
+.hero-copy p{
+  margin:0;
+  color:var(--muted);
+}
+
+/* Buttons */
+.btn{ display:inline-flex; align-items:center; gap:8px; padding:10px 16px; border-radius:10px; background:var(--brand); color:white; border:none; cursor:pointer; font-weight:600; }
+.btn.ghost{ background:transparent; color:var(--brand); border:1px solid rgba(37,99,235,0.12); }
+
+/* Utility containers */
+.max-w{ padding:0 20px; }
+
+/* Responsive typography */
+@media (max-width: 900px){
+  .hero-inner{ flex-direction:column; align-items:flex-start; }
+  .hero-copy h1{ font-size:28px; }
+  .search-box input{ width:100%; max-width:420px; }
+}
+
+@media (max-width:600px){
+  .hero-copy h1{ font-size:22px; }
+}
 
 .nav-bottom {
   position: fixed;
@@ -23,21 +97,25 @@
   z-index: 1000;
 }
 
-.nav-item {
-  text-decoration: none;
-  color: #333;
+.nav-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  font-size: 14px;
-  font-weight: 600;
-  gap: 3px;
-  transition: 0.3s;
+  padding: 8px 0;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
 }
 
-.nav-item:hover {
-  color: #007bff;
+.footer{
+  position:relative;
+  z-index:2;
 }
+
 
 /* Icons size */
 .nav-item span {
